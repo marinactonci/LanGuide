@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "237807005462",
+    "project_id": "languidexamarinauth",
+    "storage_bucket": "languidexamarinauth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237807005462:android:117e2f39e749d3145dea37",
+        "android_client_info": {
+          "package_name": "com.companyname.zavrsniprojekt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237807005462-qi54q77ib2dunrr85mc77v01ma0qua4e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANh-7EAp3_7n9QZkAlxzyH-Qu4sz8EcSU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237807005462-qi54q77ib2dunrr85mc77v01ma0qua4e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

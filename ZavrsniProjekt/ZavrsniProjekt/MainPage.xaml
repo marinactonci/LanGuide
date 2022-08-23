@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZavrsniProjekt.MainPage"
+             BackgroundColor="#e5e5e5">
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid BackgroundColor="#049788">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="60" ></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" 
+                       Source="studentCap"
+                       HeightRequest="50"
+                       WidthRequest="50"
+                       Margin="0, 10, 0, 0"/>
+                <Label Grid.Row="1"
+                       Text="LanGuide"
+                       TextColor="white"
+                       FontSize="50"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"/>
+                <Label Grid.Row="2"
+                       Text="LANGUAGE TOOL"
+                       TextColor="white"
+                       FontSize="15"
+                       HorizontalTextAlignment="Center"/>
+            </Grid>
+
+            <Label Text="Log In"
+                   TextColor="#049788"
+                   FontSize="50"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   Margin="20, 100, 20, 20"/>
+
+            <Entry x:Name="emailEntry"
+                   Placeholder="Email Address"
+                   Keyboard="Email"
+                   TextColor="#049788"
+                   PlaceholderColor="#049788"
+                   Margin="25, 0"/>
+
+            <Entry x:Name="passwordEntry"
+                   Placeholder="Password"
+                   IsPassword="True"
+                   TextColor="#049788"
+                   PlaceholderColor="#049788"
+                   Margin="25, 0"/>
+
+            <Button x:Name="loginButton"
+                    Margin="100, 25"
+                    Text="Log in"
+                    Clicked="loginButton_Clicked"
+                    BackgroundColor="#e2a349"
+                    TextColor="white"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

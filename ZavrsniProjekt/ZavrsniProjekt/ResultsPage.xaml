@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZavrsniProjekt.ResultsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="#049788">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="60" ></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" 
+                       Source="studentCap"
+                       HeightRequest="50"
+                       WidthRequest="50"
+                       Margin="0, 10, 0, 0"/>
+                <Label Grid.Row="1"
+                       Text="LanGuide"
+                       TextColor="white"
+                       FontSize="50"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"/>
+                <Label Grid.Row="2"
+                       Text="LANGUAGE TOOL"
+                       TextColor="white"
+                       FontSize="15"
+                       HorizontalTextAlignment="Center"
+               />
+            </Grid>
+
+            <Grid BackgroundColor="#222d31"
+                  Margin="0, -6, 0, 0"
+                  HeightRequest="350"
+                  VerticalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0"
+                       Source="list"
+                       Margin="10, 0, 0, 0"/>
+                <Label Grid.Column="1"
+                       Text="Results"
+                       TextColor="White"
+                       VerticalOptions="Center" 
+                       FontSize="25"/>
+                <Button x:Name="openHomePageButton"
+                        Grid.Column="2"
+                        Margin="20"
+                        Text="Go back"
+                        Clicked="OpenHomePageButton_Clicked2"
+                        BackgroundColor="#e2a349"
+                        TextColor="white"/>
+            </Grid>
+
+            <Grid HeightRequest="800">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <SearchBar x:Name="searchID" 
+                               TextChanged="searchID_TextChanged" 
+                               Placeholder="Enter UserID"
+                               Grid.Column="0"
+                               FontSize="12"/>
+                    <SearchBar x:Name="searchExerciseID" 
+                               TextChanged="searchExerciseID_TextChanged" 
+                               Placeholder="Enter ExerciseID" 
+                               Grid.Column="1"
+                               FontSize="12"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"></RowDefinition>
+                                <RowDefinition Height="2*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Text="Result %:"
+                                   Grid.Row="0"
+                                   Margin="15, 0, 0, 0"/>
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <SearchBar x:Name="resultPercentMin" 
+                                           TextChanged="resultPercentMin_TextChanged" 
+                                           Placeholder="MIN"
+                                           FontSize="12"
+                                           Grid.Row="0"
+                                           Margin="-10, 0, 0, 0"/>
+                                <SearchBar x:Name="resultPercentMax" 
+                                           TextChanged="resultPercentMax_TextChanged" 
+                                           Placeholder="MAX" 
+                                           Grid.Row="1"
+                                           FontSize="12"
+                                           Margin="-10, 0, 0, 0"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Text="Result score: "
+                               Grid.Row="0"
+                               Margin="15, 0, 0, 0"/>
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"></RowDefinition>
+                                <RowDefinition Height="1*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <SearchBar x:Name="resultScoreMin" 
+                                       TextChanged="resultScoreMin_TextChanged" 
+                                       Placeholder="MIN" 
+                                       Grid.Row="0"
+                                       FontSize="12"
+                                       Margin="-10, 0, 0, 0"/>
+                            <SearchBar x:Name="resultScoreMax" 
+                                       TextChanged="resultScoreMax_TextChanged" 
+                                       Placeholder="MAX" 
+                                       Grid.Row="1"
+                                       FontSize="12"
+                                       Margin="-10, 0, 0, 0"/>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Text="Result Max: "
+                               Grid.Row="0"
+                               Margin="15, 0, 0, 0"/>
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <SearchBar x:Name="scoreMin" 
+                                       TextChanged="scoreMin_TextChanged" 
+                                       Placeholder="MIN" 
+                                       Grid.Row="0"
+                                       FontSize="12"
+                                       Margin="-10, 0, 0, 0"/>
+                            <SearchBar x:Name="scoreMax" 
+                                       TextChanged="scoreMax_TextChanged" 
+                                       Placeholder="MAX" 
+                                       Grid.Row="1"
+                                       FontSize="12"
+                                       Margin="-10, 0, 0, 0"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <SearchBar x:Name="searchLanguage" 
+                           SearchButtonPressed="searchLanguage_SearchButtonPressed" 
+                           Placeholder="Enter Language" 
+                           Grid.Row="2"
+                           FontSize="12"/>
+            </Grid>
+
+            <Frame BackgroundColor="#049788"
+                   HeightRequest="250"
+                   Padding="0">
+                <Grid Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="User ID" 
+                           VerticalOptions="Center"  
+                           Grid.Column="0" 
+                           FontSize="12"
+                           TextColor="white"/>
+                    <ImageButton Source="upDownArrows"
+                                 HorizontalOptions="EndAndExpand"
+                                 VerticalOptions="Center" 
+                                 Grid.Column="1" 
+                                 BackgroundColor="Transparent" 
+                                 Pressed="ImageButton_Pressed"/>
+                    <Label Text="Excercise ID" 
+                           VerticalOptions="Center"  
+                           Grid.Column="2" 
+                           FontSize="12"
+                           TextColor="white"/>
+                    <ImageButton Source="upDownArrows"
+                                 HorizontalOptions="EndAndExpand"
+                                 VerticalOptions="Center" 
+                                 Grid.Column="3" 
+                                 BackgroundColor="Transparent" 
+                                 Pressed="ImageButton_Pressed_2"/>
+                    <Label Text="Result %" 
+                           VerticalOptions="Center"  
+                           Grid.Column="4" 
+                           FontSize="12"
+                           TextColor="white"/>
+                    <ImageButton Source="upDownArrows"
+                                 HorizontalOptions="EndAndExpand"
+                                 VerticalOptions="Center" 
+                                 Grid.Column="5" 
+                                 BackgroundColor="Transparent" 
+                                 Pressed="ImageButton_Pressed_3"/>
+                    <Label Text="Result Score" 
+                           VerticalOptions="Center"  
+                           Grid.Column="6" 
+                           FontSize="12"
+                           TextColor="white"/>
+                    <ImageButton Source="upDownArrows"
+                                 HorizontalOptions="EndAndExpand"
+                                 VerticalOptions="Center" 
+                                 Grid.Column="7" 
+                                 BackgroundColor="Transparent" 
+                                 Pressed="ImageButton_Pressed_4"/>
+                    <Label Text="Result Max" 
+                           VerticalOptions="Center"  
+                           Grid.Column="8" 
+                           FontSize="12"
+                           TextColor="white"/>
+                    <ImageButton Source="upDownArrows"
+                                 HorizontalOptions="EndAndExpand"
+                                 VerticalOptions="Center" 
+                                 Grid.Column="9" 
+                                 BackgroundColor="Transparent" 
+                                 Pressed="ImageButton_Pressed_5"/>
+                    <Label Text="Language" 
+                           VerticalOptions="Center"  
+                           Grid.Column="10" 
+                           FontSize="12"
+                           TextColor="white"/>
+                    <ImageButton Source="upDownArrows"
+                                 HorizontalOptions="EndAndExpand"
+                                 VerticalOptions="Center" 
+                                 Grid.Column="11" 
+                                 BackgroundColor="Transparent" 
+                                 Pressed="ImageButton_Pressed_7"/>
+                </Grid>
+            </Frame>
+            <ListView x:Name="resultListView" 
+                      SelectionMode="None" 
+                      HasUnevenRows="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="0">
+                                <Grid Padding="0" 
+                                      RowSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Margin="10,0,10,0" 
+                                           Text="{Binding id_user}" 
+                                           VerticalOptions="Center" 
+                                           Grid.Column="0"  />
+                                    <Label Margin="0,0,10,0" 
+                                           Text="{Binding id_exercise}" 
+                                           VerticalOptions="Center" 
+                                           Grid.Column="2"
+                                           FontSize="12"/>
+                                    <Label Margin="0,0,10,0" 
+                                           Text="{Binding result_percent}" 
+                                           VerticalOptions="Center" 
+                                           Grid.Column="4"
+                                           FontSize="12"/>
+                                    <Label Margin="0,0,10,0" 
+                                           Text="{Binding result_score}" 
+                                           VerticalOptions="Center" 
+                                           Grid.Column="6" />
+                                    <Label Margin="0,0,10,0" 
+                                           Text="{Binding result_max}" 
+                                           VerticalOptions="Center" 
+                                           Grid.Column="8" />
+                                    <Label Margin="0,0,10,0" 
+                                           Text="{Binding language}" 
+                                           VerticalOptions="Center" 
+                                           Grid.Column="10" />
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

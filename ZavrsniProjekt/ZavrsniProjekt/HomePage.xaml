@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZavrsniProjekt.HomePage"
+             BackgroundColor="#e5e5e5">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="#049788">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="60" ></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" 
+                       Source="studentCap"
+                       HeightRequest="50"
+                       WidthRequest="50"
+                       Margin="0, 10, 0, 0"/>
+                <Label Grid.Row="1"
+                       Text="LanGuide"
+                       TextColor="white"
+                       FontSize="50"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"/>
+                <Label Grid.Row="2"
+                       Text="LANGUAGE TOOL"
+                       TextColor="white"
+                       FontSize="15"
+                       HorizontalTextAlignment="Center"
+               />
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="175"></RowDefinition>
+                    <RowDefinition Height="175"></RowDefinition>
+                    <RowDefinition Height="175"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnGridCardTappedOpenUsers"
+                                              NumberOfTapsRequired="1" />
+                    </Grid.GestureRecognizers>
+                    <Grid Margin="50, 25">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0"
+                               Source="users" 
+                               BackgroundColor="#049788"
+                               HeightRequest="50"
+                               WidthRequest="50"/>
+                        <Grid Grid.Column="1" 
+                              BackgroundColor="white"
+                              Margin="-5, 0, 0, 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0"
+                                   FontSize="20"
+                                   Text="USERS"
+                                   Margin="5, 10, 0, 0"/>
+                            <Label Grid.Row="1"
+                                   FontSize="15"
+                                   Text="List of all students who are using the app"
+                                   Margin="5, -20, 0, 0"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnGridCardTappedOpenResults"
+                                              NumberOfTapsRequired="1" />
+                    </Grid.GestureRecognizers>
+                    <Grid Margin="50, 20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0"
+                               Source="list" 
+                               BackgroundColor="#e2a349"/>
+                        <Grid Grid.Column="1"
+                              BackgroundColor="white"
+                              Margin="-5, 0, 0, 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0"
+                                   FontSize="20"
+                                   Text="RESULTS"
+                                   Margin="5, 10, 0, 0"/>
+                            <Label Grid.Row="1"
+                                   FontSize="15"
+                                   Text="List of all results in solving exercises"
+                                   Margin="5, -20, 0, 0"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnGridCardTappedOpenLanguages"
+                                              NumberOfTapsRequired="1" />
+                    </Grid.GestureRecognizers>
+                    <Grid Margin="50, 20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0"
+                               Source="languages" 
+                               BackgroundColor="#049788"/>
+                        <Grid Grid.Column="1"
+                              BackgroundColor="white"
+                              Margin="-5, 0, 0, 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0"
+                                   FontSize="20"
+                                   Text="LANGUAGES"
+                                   Margin="5, 10, 0, 0"/>
+                            <Label Grid.Row="1"
+                                   FontSize="15"
+                                   Text="List of all languages available on exercises"
+                                   Margin="5, -20, 0, 0"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <Label Grid.Column="1"
+                   Text="Log Out"
+                   TextColor="#049788"
+                   TextDecorations="Underline"
+                   HorizontalTextAlignment="Center">
+               <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLinkTappedSignOut"
+                                          NumberOfTapsRequired="1"/>
+               </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

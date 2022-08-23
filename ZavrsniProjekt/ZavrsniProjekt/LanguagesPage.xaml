@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZavrsniProjekt.LanguagesPage"
+             BackgroundColor="#e5e5e5">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="#049788">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="60" ></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" 
+                       Source="studentCap"
+                       HeightRequest="50"
+                       WidthRequest="50"
+                       Margin="0, 10, 0, 0"/>
+                <Label Grid.Row="1"
+                       Text="LanGuide"
+                       TextColor="white"
+                       FontSize="50"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"/>
+                <Label Grid.Row="2"
+                       Text="LANGUAGE TOOL"
+                       TextColor="white"
+                       FontSize="15"
+                       HorizontalTextAlignment="Center"/>
+            </Grid>
+
+            <Grid BackgroundColor="#222d31"
+                  Margin="0, -6, 0, 0"
+                  HeightRequest="175"
+                  VerticalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0"
+                       Source="languages"
+                       Margin="10, 0, 0, 0"/>
+                <Label Grid.Column="1"
+                       Text="Languages"
+                       TextColor="White"
+                       VerticalOptions="Center" 
+                       FontSize="25"/>
+                <Button x:Name="openHomePageButton"
+                        Grid.Column="2"
+                        Margin="20"
+                        Text="Go back"
+                        Clicked="OpenHomePageButton_Clicked3"
+                        BackgroundColor="#e2a349"
+                        TextColor="white"/>
+            </Grid>
+
+            <Frame BackgroundColor="#049788" 
+                   HeightRequest="100" 
+                   Padding="0"
+                   Margin="0, 20, 0, 0">
+                <Grid Padding="0">
+                    <Label Text="Languages:" 
+                           TextColor="white"
+                           VerticalOptions="Center"  
+                           Grid.Column="0" 
+                           FontSize="20"
+                           Margin="20, 0, 0, 0"/>
+                    <BoxView WidthRequest="1" 
+                             Grid.Column="0"/>
+                </Grid>
+            </Frame>
+
+            <ListView x:Name="languageListView" 
+                      SelectionMode="None" 
+                      HasUnevenRows="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="0">
+                                <Grid Padding="0" 
+                                      RowSpacing="0">
+                                    <Label Text="{Binding language}" 
+                                           VerticalOptions="Center"  
+                                           FontSize="20"
+                                           Margin="20, 0, 0, 0"/>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZavrsniProjekt.UsersPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="#049788">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="60" ></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" 
+                       Source="studentCap"
+                       HeightRequest="50"
+                       WidthRequest="50"
+                       Margin="0, 10, 0, 0"/>
+                <Label Grid.Row="1"
+                       Text="LanGuide"
+                       TextColor="white"
+                       FontSize="50"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"/>
+                <Label Grid.Row="2"
+                       Text="LANGUAGE TOOL"
+                       TextColor="white"
+                       FontSize="15"
+                       HorizontalTextAlignment="Center"/>
+            </Grid>
+
+            <Grid BackgroundColor="#222d31"
+                  Margin="0, -6, 0, 0"
+                  HeightRequest="175"
+                  VerticalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0"
+                       Source="users"
+                       Margin="10, 0, 0, 0"/>
+                <Label Grid.Column="1"
+                       Text="Users"
+                       TextColor="White"
+                       VerticalOptions="Center" 
+                       FontSize="25"/>
+                <Button x:Name="openHomePageButton"
+                        Grid.Column="2"
+                        Margin="20"
+                        Text="Go back"
+                        Clicked="OpenHomePageButton_Clicked"
+                        BackgroundColor="#e2a349"
+                        TextColor="white"/>
+            </Grid>
+
+            <Frame BackgroundColor="#049788"
+                   HeightRequest="100" 
+                   Padding="0">
+                <Grid Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Margin="10,0,10,0"
+                           Text="User ID" 
+                           VerticalOptions="Center"  
+                           Grid.Column="0" 
+                           FontSize="20"
+                           TextColor="white"/>
+                    <ImageButton Source="upDownArrows"
+                                 HorizontalOptions="EndAndExpand"
+                                 VerticalOptions="CenterAndExpand" 
+                                 Grid.Column="0" 
+                                 BackgroundColor="Transparent" 
+                                 Pressed="UpDownArrowsPressed"/>
+                    <Label Margin="10,0,10,0" 
+                           Text="Email" 
+                           VerticalOptions="Center"  
+                           Grid.Column="1" 
+                           FontSize="20"
+                           TextColor="white"/>
+
+                    <Label Margin="10,0,10,0" 
+                           Text="Time Created" 
+                           VerticalOptions="Center"  
+                           Grid.Column="2" 
+                           FontSize="20"
+                           TextColor="white"/>
+                    <ImageButton Source="upDownArrows"
+                                 HorizontalOptions="EndAndExpand"
+                                 VerticalOptions="Center" 
+                                 Grid.Column="2"   
+                                 Pressed="UpDownArrowsPressed2"
+                                 BackgroundColor="Transparent"/>
+
+                    <BoxView WidthRequest="1" 
+                             Grid.Column="0" 
+                             HorizontalOptions="EndAndExpand" 
+                             VerticalOptions="FillAndExpand"/>
+                    <BoxView WidthRequest="1" 
+                             Grid.Column="1" 
+                             HorizontalOptions="EndAndExpand" 
+                             VerticalOptions="FillAndExpand" />
+                    <BoxView WidthRequest="1" 
+                             Grid.Column="2" 
+                             HorizontalOptions="EndAndExpand" 
+                             VerticalOptions="FillAndExpand" />
+                </Grid>
+            </Frame>
+            <ListView x:Name="userListView" 
+                      SelectionMode="None" 
+                      HasUnevenRows="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="0" 
+                                   BorderColor="white">
+                                <Grid Padding="0" 
+                                      RowSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1.5*"/>
+                                        <ColumnDefinition Width="1.5*"/>
+                                        <ColumnDefinition Width="1.5*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="10,0,10,0" 
+                                           Text="{Binding id_user}" 
+                                           VerticalOptions="Center" 
+                                           Grid.Column="0"  />
+                                    <Label Margin="10,0,10,0" 
+                                           Text="{Binding email}" 
+                                           VerticalOptions="Center" 
+                                           Grid.Column="1" />
+                                    <Label Margin="10,0,10,0" 
+                                           Text="{Binding create_time}" 
+                                           VerticalOptions="Center" 
+                                           Grid.Column="2" />
+
+                                    <BoxView WidthRequest="1" 
+                                             Grid.Column="0" 
+                                             HorizontalOptions="EndAndExpand" 
+                                             VerticalOptions="FillAndExpand" />
+                                    <BoxView WidthRequest="1" 
+                                             Grid.Column="1" 
+                                             HorizontalOptions="EndAndExpand" 
+                                             VerticalOptions="FillAndExpand"/>
+                                    <BoxView WidthRequest="1" 
+                                             Grid.Column="2" 
+                                             HorizontalOptions="EndAndExpand" 
+                                             VerticalOptions="FillAndExpand"/>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
