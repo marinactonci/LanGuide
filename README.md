@@ -1,1 +1,1 @@
-# ZavrsniProjekt
+# LanGuid - Završni projekt
