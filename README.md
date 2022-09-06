@@ -7,7 +7,7 @@
    <br>Made for android smartphones.</h4>
    
 <p align="center">
-  <img src="screenshot.png" alt="languide" style="height: 300px"/>
+  <img src="screenshot.png" alt="languide" style="height: 600px"/>
 </p>
 
 ## Login info:
